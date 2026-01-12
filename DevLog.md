@@ -6,11 +6,15 @@ Day1 The Diary In Group Project
 - พอมีคำถาม อาจารย์ต้องหยุดสอนหรือสลับหน้าจอไปดูเครื่องมืออื่น
 - ทำให้การสอนสะดุด และเสียสมาธิทั้งสองฝั่ง”
 
-Models 
+# Models 
 Agile + Scrum
+
 Sprint / Iteration: ทำงานเป็นรอบ ๆ (เช่น 2–4 สัปดาห์)
+
 Daily Standup / Sync: อัพเดตปัญหาและช่วยกันแก้
+
 Review / Retrospective: หลังรอบเสร็จ → ร่วมกันทดสอบและปรับปรุง
+
 <img width="1024" height="687" alt="image" src="https://github.com/user-attachments/assets/77617081-6634-4286-abd3-738a6b6cff81" />
 
 Slide 1 – Core & Student Features
@@ -62,7 +66,7 @@ Image-based Question & Matching Quiz – ฝึกความเข้าใจ
 
 
 
-Technology used
+# Technology used
 
 <img width="481" height="296" alt="image" src="https://github.com/user-attachments/assets/771222a6-d48f-45ce-8d18-297ff579e019" />
 
