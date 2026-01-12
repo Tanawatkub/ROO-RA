@@ -17,7 +17,9 @@ Review / Retrospective: หลังรอบเสร็จ → ร่วมก
 
 <img width="1024" height="687" alt="image" src="https://github.com/user-attachments/assets/77617081-6634-4286-abd3-738a6b6cff81" />
 
-Slide 1 – Core & Student Features
+# Features
+
+# Core & Student Features
 
 Header: Interactive Classroom Overlay – Student Side
 
@@ -36,7 +38,7 @@ Live Poll / Confidence Poll – ตอบ Poll ระหว่างเรีย
 View Answered Questions – ดูคำถามที่อาจารย์ตอบแล้ว
 
 
-Slide 2 – Instructor & Overlay Features
+# Instructor & Overlay Features
 
 Header: Interactive Classroom Overlay – Instructor Side
 
