@@ -1,205 +1,163 @@
-RU-LAR
+# RU-LAR
+## Secure Real-time Learning and Interaction System
 
-Secure Real-time Learning and Interaction System
+---
 
-Project Overview
+## Project Overview
 
-RU-LAR เป็นระบบ Secure Real-time Learning and Interaction System ที่พัฒนาขึ้นเพื่อเพิ่มการมีส่วนร่วมของนักศึกษาในห้องเรียน โดยเน้นการสื่อสารแบบ Anonymous Participation และการแสดงผลข้อมูลแบบ Real-time ภายใต้การออกแบบที่คำนึงถึง Security by Design
+RU-LAR เป็นระบบ Secure Real-time Learning and Interaction System ที่พัฒนาขึ้นเพื่อส่งเสริมการมีส่วนร่วมของนักศึกษาในห้องเรียน โดยรองรับการโต้ตอบแบบ Real-time และการมีส่วนร่วมแบบไม่เปิดเผยตัวตน (Anonymous Participation)
 
-ระบบมีเป้าหมายเพื่อช่วยให้อาจารย์สามารถมองเห็นระดับความเข้าใจและการมีส่วนร่วมของผู้เรียนได้ชัดเจนมากขึ้น รวมถึงช่วยตรวจจับนักศึกษาที่มีพฤติกรรมเงียบ (Silent Student) แต่ยังอาจไม่เข้าใจเนื้อหาที่เรียนอยู่
+ระบบถูกออกแบบภายใต้แนวคิด Security by Design และใช้กระบวนการ Threat Modeling ในการวิเคราะห์ความเสี่ยงตั้งแต่ระดับสถาปัตยกรรม
 
-Problem Statement
+---
 
-ในสภาพแวดล้อมการเรียนการสอนแบบดั้งเดิม พบว่านักศึกษาจำนวนมาก
+## Problem Statement
 
-ไม่กล้าแสดงความคิดเห็น
+ในห้องเรียนทั่วไป นักศึกษาจำนวนมาก:
 
-ไม่กล้าถามคำถามในที่สาธารณะ
-
-ขาดช่องทางการมีส่วนร่วมแบบ Real-time
+- ไม่กล้าแสดงความคิดเห็น  
+- ไม่กล้าถามคำถามในที่สาธารณะ  
+- ขาดช่องทางการมีส่วนร่วมแบบ Real-time  
+- กลายเป็น Silent Student แม้ยังไม่เข้าใจเนื้อหา  
 
 ส่งผลให้อาจารย์ไม่สามารถประเมินระดับความเข้าใจของผู้เรียนได้อย่างแม่นยำระหว่างการสอน
 
-RU-LAR จึงถูกพัฒนาขึ้นเพื่อแก้ไขปัญหานี้ โดยสร้างแพลตฟอร์มที่ปลอดภัย เปิดโอกาสให้ผู้เรียนมีส่วนร่วมโดยไม่เปิดเผยตัวตน และส่งข้อมูลตอบกลับให้อาจารย์แบบ Real-time
+RU-LAR จึงถูกพัฒนาขึ้นเพื่อแก้ไขปัญหาดังกล่าว ด้วยแพลตฟอร์มที่ปลอดภัยและสนับสนุนการมีส่วนร่วมอย่างเป็นระบบ
 
-Project Objectives
+---
 
-เปิดโอกาสให้นักศึกษาสามารถส่งคำถามและตอบโพลได้แบบ Anonymous
+## Project Objectives
 
-แสดงผลการมีส่วนร่วมของผู้เรียนแบบ Real-time
+1. เปิดโอกาสให้นักศึกษาส่งคำถามและตอบโพลแบบ Anonymous  
+2. แสดงผลการมีส่วนร่วมแบบ Real-time  
+3. สนับสนุนการตรวจจับ Silent Student  
+4. ส่งเสริม Data-driven Teaching  
+5. ออกแบบระบบโดยคำนึงถึง Security ตั้งแต่ต้นทาง  
 
-สนับสนุนอาจารย์ในการตรวจจับ Silent Student
+---
 
-ช่วยให้อาจารย์สามารถปรับการสอนได้จากข้อมูลจริง (Data-driven Teaching)
+## System Roles
 
-ออกแบบระบบโดยคำนึงถึง Security ตั้งแต่ขั้นตอนการออกแบบ
+### Student
+- เข้าร่วม Session ผ่าน QR Code หรือ Room Code  
+- ส่งคำถามแบบไม่เปิดเผยตัวตน  
+- ตอบ Poll และ Voting  
+- ดูผลลัพธ์แบบ Real-time  
 
-System Roles
+### Teacher
+- Login และสร้าง Session ห้องเรียน  
+- สร้างและควบคุม Poll  
+- ดู Engagement Analytics  
+- ทำ Content Moderation  
 
-ระบบ RU-LAR รองรับผู้ใช้งานหลัก 3 บทบาท
+### Admin
+- จัดการผู้ใช้งานและกำหนด Role  
+- ตรวจสอบ System Log  
+- กำหนดนโยบายด้าน Security  
 
-Student
+---
 
-เข้าร่วม Session ห้องเรียนด้วย QR Code หรือ Room Code
+## Core Features
 
-ส่งคำถามแบบไม่เปิดเผยตัวตน
+- Secure Authentication  
+- Session-based Classroom Interaction  
+- Anonymous Q&A  
+- Live Polling และ Voting  
+- Real-time Communication (WebSocket)  
+- Content Moderation  
+- Engagement Analytics Dashboard  
 
-ตอบ Poll และ Voting
+---
 
-ดูผลโหวตและคำถามที่ได้รับการอนุมัติแบบ Real-time
+## System Architecture
 
-Teacher
+RU-LAR ใช้แนวคิด Session-based Architecture โดยกำหนด Trust Boundary อย่างชัดเจนระหว่าง:
 
-Login และจัดการ Session ห้องเรียน
+- Client Layer  
+- Application Services  
+- External Services  
+- Database Layer  
 
-สร้างและควบคุม Poll และ Q&A
+องค์ประกอบหลักของระบบประกอบด้วย:
 
-ดูผลการตอบสนองและ Engagement Analytics
+- Authentication Service  
+- Session Management Service  
+- Message Submission Service  
+- Moderation Service  
+- Real-time Communication Service  
+- Database Service  
 
-ทำ Content Moderation เช่น ซ่อนหรือ ลบ ข้อความที่ไม่เหมาะสม
+---
 
-Admin
+## Threat Modeling Approach
 
-จัดการผู้ใช้งานและกำหนด Role
+โครงงานใช้ Microsoft Threat Modeling Tool (TMT) ในการวิเคราะห์ความเสี่ยง โดยแบ่งการวิเคราะห์เป็น 3 Layer:
 
-ตรวจสอบ System Log
+### Layer 0 – Context Layer
+- ระบุ External Entity  
+- วิเคราะห์ Data Flow  
+- กำหนด Trust Boundary  
 
-กำหนดและบังคับใช้นโยบายด้าน Security
+### Layer 1 – Process Layer
+- วิเคราะห์ Process หลักของระบบ  
 
-Core Features
+### Layer 2 – Subprocess Layer
+- แตกกระบวนการทำงานเป็นขั้นตอนย่อย  
+- วิเคราะห์ Threat ในระดับลึก  
 
-Secure Authentication ผ่าน External Identity Provider
+แนวทางนี้ช่วยให้สามารถกำหนด Mitigation Strategy ได้อย่างเป็นระบบ
 
-Session-based Classroom Interaction
+---
 
-Anonymous Q&A
+## Technology Stack
 
-Live Polling และ Voting
+### Software Management
+- GitHub  
+- Discord  
+- Notion  
 
-Real-time Data Synchronization
+### Design Tools
+- Figma  
 
-Content Moderation และ Abuse Control
+### Front End
+- React  
+- Tailwind CSS  
 
-Engagement Analytics สำหรับการเรียนการสอน
+### Back End
+- Node.js  
+- Socket.IO  
 
-System Architecture (High-Level)
+### Database
+- PostgreSQL  
 
-RU-LAR ถูกออกแบบในรูปแบบ Session-based Architecture
-โดยทุกกิจกรรมของผู้ใช้จะต้องอยู่ภายใต้ Session ที่ถูกต้อง
+### Infrastructure
+- Docker  
 
-ระบบมีการกำหนด Trust Boundary อย่างชัดเจนระหว่าง
+---
 
-Client (Student / Teacher)
+## Current Progress
 
-Application Services
+- วิเคราะห์ Requirement เรียบร้อย  
+- กำหนด Role และ Feature ครบถ้วน  
+- ออกแบบ System Architecture  
+- ดำเนินการ Threat Modeling ครบ 3 Layer  
+- จัดทำเอกสารความคืบหน้าโครงงาน  
 
-External Services
+---
 
-Database
+## Next Steps
 
-องค์ประกอบหลักของระบบประกอบด้วย
+- วิเคราะห์ Threat ตาม STRIDE Model  
+- จัดทำ Data Flow Diagram (DFD)  
+- กำหนด Mitigation Strategy  
+- พัฒนา Prototype  
+- ทดสอบระบบใน Scenario ห้องเรียนจริง  
 
-Authentication Service
+---
 
-Session Management Service
+## Project Status
 
-Message Submission Service
+อยู่ระหว่างการพัฒนา Prototype  
+เพื่อศึกษาแนวคิดด้าน Real-time System และ Security Engineering ในบริบทการศึกษา
 
-Moderation Service
-
-Overlay Display Service
-
-Real-time Communication Service
-
-Threat Modeling Approach
-
-การวิเคราะห์ความเสี่ยงด้านความปลอดภัยของระบบ RU-LAR ดำเนินการโดยใช้ Microsoft Threat Modeling Tool (TMT)
-
-การวิเคราะห์แบ่งออกเป็น 3 Layer ได้แก่
-
-Context Layer (Layer 0): ระบุ External Entity, Data Flow และ Trust Boundary
-
-Process Layer (Layer 1): วิเคราะห์ Process หลักของระบบ
-
-Subprocess Layer (Layer 2): แตก Process เป็นขั้นตอนการทำงานจริงของระบบ
-
-แนวทางนี้ช่วยให้สามารถระบุ Threat ได้ตั้งแต่ระยะเริ่มต้นของการออกแบบระบบ และนำไปสู่การวาง Mitigation ที่เหมาะสม
-
-Technology Stack
-
-โครงงาน RU-LAR ถูกพัฒนาโดยใช้เทคโนโลยีที่เหมาะสมกับระบบ Real-time Web Application โดยคำนึงถึงความสามารถในการขยายระบบ ความปลอดภัย และความสะดวกในการพัฒนา
-
-Software Management
-
-GitHub
-ใช้สำหรับ Version Control และการจัดการ Source Code ของโครงงาน
-
-Discord
-ใช้เป็นช่องทางหลักในการสื่อสาร ประชุม และประสานงานภายในทีม
-
-Notion
-ใช้สำหรับจัดการเอกสารโครงงาน แผนงาน และการติดตามความคืบหน้า
-
-Design Tools
-
-Figma
-ใช้สำหรับออกแบบ User Interface (UI) และ User Experience (UX)
-รวมถึงการสร้าง Mockup และ Prototype ของระบบก่อนการพัฒนา
-
-Front End
-
-React
-ใช้สำหรับพัฒนา User Interface แบบ Component-based
-
-Tailwind CSS
-ใช้สำหรับจัดการ Styling ของหน้าเว็บ เพื่อความยืดหยุ่นและความรวดเร็วในการพัฒนา
-
-Back End
-
-Node.js
-ใช้เป็น Runtime Environment สำหรับฝั่ง Server
-
-Socket.IO
-ใช้สำหรับการสื่อสารแบบ Real-time ระหว่าง Client และ Server
-รองรับการส่งข้อมูล เช่น Q&A, Poll และ Voting แบบทันที
-
-Database
-
-PostgreSQL
-ใช้เป็น Relational Database สำหรับจัดเก็บข้อมูลผู้ใช้
-ข้อมูล Session ห้องเรียน และข้อมูลการมีส่วนร่วมของผู้เรียน
-
-Infrastructure
-
-Docker
-ใช้สำหรับ Containerization เพื่อให้ระบบสามารถทำงานได้อย่างสม่ำเสมอ
-ในทุกสภาพแวดล้อมการพัฒนาและการ Deploy
-
-Current Progress
-
-วิเคราะห์ปัญหาและความต้องการของผู้ใช้งานเรียบร้อยแล้ว
-
-กำหนด System Role และ Core Features ครบถ้วน
-
-ออกแบบ System Architecture ระดับภาพรวม
-
-ดำเนินการ Threat Modeling ครบทั้ง 3 Layer
-
-จัดทำเอกสารสำหรับรายงานความคืบหน้าโครงงาน
-
-Next Steps
-
-วิเคราะห์ Threat ตาม STRIDE Model
-
-กำหนด Mitigation สำหรับ Threat ที่มีความเสี่ยงสูง
-
-จัดทำ Data Flow Diagram (DFD) อย่างเป็นทางการ
-
-พัฒนา Prototype ของระบบ
-
-ทดสอบการใช้งานจาก Scenario ห้องเรียนจริง
-
-Project Status
-
-โครงงานนี้อยู่ในระหว่างการพัฒนาในรูปแบบ Prototype
-เพื่อใช้ในการศึกษา ออกแบบ และประเมินแนวคิดเชิงระบบและความปลอดภัย
+---
